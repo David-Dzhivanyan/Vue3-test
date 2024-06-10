@@ -1,85 +1,51 @@
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+  <header :class="$style.header">
+    <VContainer>
+      <div :class="$style.header__inner">
+        <nav :class="$style.header__list">
+          <RouterLink to="/">
+              <img alt="logo" class="d-block" src="./assets/logo.svg">
+          </RouterLink>
+          <RouterLink to="/tariffs"> Тарифы </RouterLink>
+          <RouterLink to="/contacts"> Контакты </RouterLink>
+        </nav>
+        <div :class="$style.header__list">
+          <a href='tel:74951184422'> +7 495 118-44-22</a>
+          <a href="#"> Вход </a>
+          <VBtn
+              class="text-none text-white"
+              color="primary"
+          >
+            Регистрация
+          </VBtn>
+        </div>
+      </div>
+    </VContainer>
   </header>
+  <VContainer>
+    <RouterView />
+  </VContainer>
 
-  <RouterView />
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style module lang="scss">
+.header {
+  background: linear-gradient(90deg, #000000 30%, #1C2734 73%);
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 </style>
