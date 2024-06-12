@@ -4,18 +4,18 @@
   $body-font-family: ('PT Sans', sans-serif),
 );
 
-#app {
-	a {
-		text-decoration: none;
-		color: white;
-		font-size: 18px;
-		transition: opacity 0.1s ease-in-out;
+a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	transition: opacity 0.1s ease-in-out;
 
-		&:hover {
-			opacity: 0.8;
-		}
+	&:hover {
+		opacity: 0.8;
 	}
+}
 
+#app {
 	.v-container {
 		max-width: 1200px;
 		padding: 12px;

@@ -58,42 +58,5 @@ const alertText = computed(() => `Письмо ${JSON.stringify(data.value)} у�
 </script>
 
 <style module lang="scss">
-.root {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-
-  .form {
-    flex: 50% 1 0;
-  }
-
-  .imgWrapper {
-    flex: 50% 1 1;
-  }
-
-  .img {
-    max-width: 100%;
-  }
-
-  .title {
-    margin-bottom: 20px;
-  }
-
-  .row {
-    display: flex;
-    gap: 30px;
-  }
-
-  .input {
-    flex: 100% 0 1;
-  }
-
-  .btns {
-    display: flex;
-    gap: 30px;
-    margin-top: 20px;
-  }
-}
-
 
 </style>
